@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moonieful — Brand Clarity Studio</title>
+<meta name="description" content="Moonieful is a brand clarity studio. We diagnose brand fog and rebuild brands around the one thing the ideal client needs to hear. Work across B2B tech, education, and wellness." />
+<style>
+  :root{
+    --ink:#16242b; --muted:#5d6b72; --line:#e7e9ea;
+    --teal:#1a6269; --teal-dark:#15454a; --cream:#fbfaf7; --gold:#c9a14a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; color:var(--ink); background:var(--cream);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 24px;}
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.top{background:var(--teal-dark); color:#fff; padding:60px 0 56px; text-align:center;}
+  header.top .logo{font-family:Georgia,serif; font-weight:700; font-size:24px; letter-spacing:.02em; margin:0 0 26px;}
+  header.top .logo .moon{color:var(--gold);}
+  header.top .eyebrow{color:#d8b463; letter-spacing:.16em; text-transform:uppercase; font-size:13px; font-weight:700; margin:0 0 16px;}
+  header.top h1{font-family:Georgia,"Times New Roman",serif; font-weight:700; font-size:42px; line-height:1.12; margin:0 auto 18px; max-width:760px;}
+  header.top p.lede{font-size:18px; color:#dfeae8; max-width:660px; margin:0 auto 26px;}
+  .links{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
+  .links a.primary{background:var(--gold); color:#2a1f06; border:none; font-weight:700;}
+  .links a{
+    display:inline-block; background:rgba(255,255,255,.08); color:#fff;
+    border:1px solid rgba(255,255,255,.22); padding:11px 22px; border-radius:999px;
+    font-size:15px; font-weight:600;
+  }
+  .links a:hover{filter:brightness(1.05); text-decoration:none;}
+  .links a:not(.primary):hover{background:#fff; color:var(--teal-dark);}
+
+  .clients{border-bottom:1px solid var(--line); background:#fff;}
+  .clients .wrap{display:flex; align-items:center; gap:14px 34px; flex-wrap:wrap; padding:22px 24px; justify-content:center;}
+  .clients span.label{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600;}
+  .clients span.name{font-weight:700; color:var(--ink); font-size:16px; opacity:.78;}
+
+  section{padding:54px 0;}
+  .section-head{max-width:660px; margin:0 0 30px;}
+  .section-head.center{margin:0 auto 34px; text-align:center;}
+  .section-head h2{font-family:Georgia,serif; font-size:30px; margin:0 0 8px;}
+  .section-head p{color:var(--muted); margin:0; font-size:17px;}
+
+  .case{
+    background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    display:grid; grid-template-columns:1fr 1fr; margin-bottom:26px;
+    box-shadow:0 1px 2px rgba(20,40,45,.04);
+  }
+  .case .shot{background:#0d1518; min-height:240px; border-right:1px solid var(--line);}
+  .case .shot img{display:block; width:100%; height:100%; object-fit:cover; object-position:top;}
+  .case .body{padding:28px 30px;}
+  .case .tag{font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); font-weight:700; margin:0 0 8px;}
+  .case h3{font-size:22px; margin:0 0 4px;}
+  .case .sub{color:var(--muted); font-size:14px; margin:0 0 16px;}
+  .case h4{font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink); margin:16px 0 4px;}
+  .case p{margin:0 0 8px; font-size:15.5px;}
+  .case .visit{display:inline-block; margin-top:12px; font-weight:600; font-size:14.5px;}
+  .case:nth-child(even) .shot{order:2; border-right:none; border-left:1px solid var(--line);}
+
+  .product{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,40,45,.04);}
+  .product .grid{display:grid; grid-template-columns:1.05fr .95fr;}
+  .product .copy{padding:34px 36px;}
+  .product .copy .tag{color:var(--gold); font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:700;}
+  .product .shot img{width:100%; height:100%; object-fit:cover; object-position:top; border-left:1px solid var(--line);}
+
+  /* Team */
+  .team{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .team .grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:760px; margin:0 auto;}
+  .member{display:flex; gap:18px; align-items:center;}
+  .member .av{width:84px; height:84px; border-radius:50%; overflow:hidden; flex:0 0 84px; background:var(--teal); display:flex; align-items:center; justify-content:center;}
+  .member .av img{width:100%; height:100%; object-fit:cover;}
+  .member .av span{color:#fff; font-family:Georgia,serif; font-size:26px; font-weight:700;}
+  .member h3{margin:0 0 2px; font-size:18px;}
+  .member .role{color:var(--teal); font-weight:600; font-size:14px; margin:0 0 4px;}
+  .member a{font-size:14px; font-weight:600;}
+
+  footer{background:var(--teal-dark); color:#fff; padding:54px 0; text-align:center;}
+  footer h2{font-family:Georgia,serif; font-size:28px; margin:0 0 10px;}
+  footer p{color:#cfe2df; margin:0 0 22px;}
+  footer a.cta{display:inline-block; background:var(--gold); color:#2a1f06; font-weight:700; padding:13px 28px; border-radius:999px;}
+  footer a.cta:hover{text-decoration:none; filter:brightness(1.06);}
+  footer .small{font-size:13px; color:#8fb4b0; margin-top:22px;}
+  footer .small a{color:#cfe2df;}
+
+  @media (max-width:780px){
+    header.top h1{font-size:32px;}
+    .case, .product .grid, .team .grid{grid-template-columns:1fr;}
+    .case .shot{border-right:none; border-bottom:1px solid var(--line); min-height:200px;}
+    .case:nth-child(even) .shot{order:0; border-left:none;}
+    .product .shot img{border-left:none; border-top:1px solid var(--line);}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="logo"><span class="moon">&#9790;</span> Moonieful</p>
+    <p class="eyebrow">Brand Clarity Studio</p>
+    <h1>We make good businesses impossible to misunderstand.</h1>
+    <p class="lede">Strangers decide in seconds whether your work is for them. We find where your message goes foggy and rebuild your brand around the one thing your ideal client needs to hear, so the right people choose you before you ever get on a call.</p>
+    <div class="links">
+      <a class="primary" href="https://calendly.com/moonieful/moonieful-connection-call-clone" target="_blank" rel="noopener">Book a connection call</a>
+      <a href="mailto:miki@moonieful.com">miki@moonieful.com</a>
+      <a href="https://moonieful.com" target="_blank" rel="noopener">moonieful.com</a>
+    </div>
+  </div>
+</header>
+
+<div class="clients">
+  <div class="wrap">
+    <span class="label">Selected clients</span>
+    <span class="name">Burgland Technology Partners</span>
+    <span class="name">SSG Educational</span>
+    <span class="name">Anita B. Volpe</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The work</h2>
+      <p>Three businesses, three very different audiences, one job each time: find the problem the buyer actually feels, then build the brand so they feel understood.</p>
+    </div>
+
+    <!-- Burgland -->
+    <div class="case">
+      <div class="shot"><img src="img/burgland.jpeg" alt="Burgland Technology Partners homepage" /></div>
+      <div class="body">
+        <p class="tag">B2B Technology</p>
+        <h3>Burgland Technology Partners</h3>
+        <p class="sub">IT consulting · San Antonio, TX</p>
+        <h4>The problem</h4>
+        <p>One more IT consultant in a crowded market, hard to tell apart from the rest.</p>
+        <h4>What we did</h4>
+        <p>Positioned them as technology partners rather than vendors, and built a voice that makes complex, intimidating tech feel trustworthy to a non-technical buyer.</p>
+        <a class="visit" href="https://www.burglandtech.com" target="_blank" rel="noopener">Visit the site &rarr;</a>
+      </div>
+    </div>
+
+    <!-- SSG -->
+    <div class="case">
+      <div class="shot"><img src="img/ssg.jpeg" alt="SSG Educational homepage" /></div>
+      <div class="body">
+        <p class="tag">Mission-driven Education</p>
+        <h3>SSG Educational</h3>
+        <p class="sub">Trauma-informed teaching methodology</p>
+        <h4>The problem</h4>
+        <p>A powerful method and a moving founder story, but no brand a school district could quickly trust.</p>
+        <h4>What we did</h4>
+        <p>Shaped the methodology and the story into one clear, credible brand that leads with proof as much as heart, so the people holding the budget feel safe saying yes.</p>
+        <a class="visit" href="https://www.ssgeducational.com" target="_blank" rel="noopener">Visit the site &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Anita -->
+    <div class="case">
+      <div class="shot"><img src="img/anita.jpeg" alt="Anita B. Volpe homepage" /></div>
+      <div class="body">
+        <p class="tag">Personal Brand · Wellness</p>
+        <h3>Anita B. Volpe</h3>
+        <p class="sub">Beauty and wellness consultant</p>
+        <h4>The problem</h4>
+        <p>A career changer with deep expertise and no brand that signaled her authority.</p>
+        <h4>What we did</h4>
+        <p>Built a personal brand on her own story and values, with a voice aimed at the woman who has tried everything and is tired of being sold to. Authority through trust, not hype.</p>
+        <a class="visit" href="https://www.anitabvolpe.com" target="_blank" rel="noopener">Visit the site &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Our diagnostic, productized</h2>
+      <p>The first step of our process, turned into a tool anyone can run.</p>
+    </div>
+    <div class="product">
+      <div class="grid">
+        <div class="copy">
+          <p class="tag">SnapGist · Our product</p>
+          <h3 style="font-size:24px; margin:8px 0 10px;">See your brand the way a stranger does</h3>
+          <p style="margin:0 0 10px;">SnapGist reads a website the way a first-time visitor does and shows exactly where the message goes foggy. It is how we start every engagement, and now founders can run it themselves before they ever reach out.</p>
+          <a class="visit" href="https://snapgist.app" target="_blank" rel="noopener">Try SnapGist &rarr;</a>
+        </div>
+        <div class="shot"><img src="img/snapgist.jpeg" alt="SnapGist landing page" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>The studio</h2>
+      <p>Two founders, two halves of the same job: get your value across clearly, then put it in front of the right people.</p>
+    </div>
+    <div class="grid">
+      <div class="member">
+        <div class="av"><img src="img/miki.jpg" alt="Michelle Winebush-Roberts" /></div>
+        <div>
+          <h3>Michelle "Miki" Winebush-Roberts</h3>
+          <p class="role">Brand strategy &amp; voice</p>
+          <a href="https://harry3rob-art.github.io/michelle-roberts-portfolio/" target="_blank" rel="noopener">View portfolio &rarr;</a>
+        </div>
+      </div>
+      <div class="member">
+        <div class="av"><span>HR</span></div>
+        <div>
+          <h3>Harry W. Roberts III</h3>
+          <p class="role">Marketing &amp; tech</p>
+          <a href="https://harry3rob-art.github.io/harry-roberts-portfolio/" target="_blank" rel="noopener">View portfolio &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Let's clear the fog</h2>
+    <p>Start with a free connection call. No pitch, just a look at what strangers see.</p>
+    <a class="cta" href="https://calendly.com/moonieful/moonieful-connection-call-clone" target="_blank" rel="noopener">Book a connection call</a>
+    <p class="small">
+      <a href="mailto:miki@moonieful.com">miki@moonieful.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://moonieful.com" target="_blank" rel="noopener">moonieful.com</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
